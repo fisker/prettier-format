@@ -53,23 +53,6 @@ test('options.filePath', async t => {
   })
 })
 
-test('options.resolveConfig', async t => {
-  await formatTester(t, {
-    input: dedent`
-      // this should be double quoted and with semi
-      var foo = "bar"
-    `,
-    expected: dedent`
-      // this should be double quoted and with semi
-      var foo = "bar";
-    `,
-    options: {
-      filePath: path.join(__dirname, '../foo.js'),
-      resolveConfig: false,
-    },
-  })
-})
-
 test('options.parser[prettier.format options]', async t => {
   await formatTester(t, {
     input: dedent`
