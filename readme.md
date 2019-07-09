@@ -60,7 +60,7 @@ Type: `string`
 
 Source code you want to format.
 
-#### option
+#### options
 
 Type: `object`
 
@@ -74,10 +74,10 @@ Type: `string`
 
 The filePath of source code, if filePath is not empty, config will load automaticly.
 
-### format.sync(file, data[, options])
+### format.sync(source, options?)
 
-sync version
+Sync version.
 
 ## Related
 
-- [write-prettier-file](https://github.com/fisker/write-prettier-file) write formatted code to file
+- [write-prettier-file](https://github.com/fisker/write-prettier-file) write formatted code to file.
