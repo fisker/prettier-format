@@ -3,9 +3,7 @@ name: CI
 on:
   push:
     branches:
-      - ! dependabot/*
-      - ! renovate/*
-      - ! refs/pull/*
+      - master
   pull_request:
 
 jobs:
