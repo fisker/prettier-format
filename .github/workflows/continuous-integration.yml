@@ -2,10 +2,6 @@ name: CI
 
 on:
   push:
-    branches:
-      - !dependabot/*
-      - !renovate/*
-      - !refs/pull/*
   pull_request:
 
 jobs:
