@@ -23,7 +23,7 @@
     "@fisker/prettier-config": "1.0.21",
     "ava": "2.4.0",
     "babel-plugin-transform-async-to-promises": "0.8.15",
-    "cz-conventional-changelog-emoji": "0.1.0",
+    "cz-conventional-changelog": "3.0.2",
     "dedent": "0.7.0",
     "eslint": "6.6.0",
     "esm": "3.2.25",
@@ -42,7 +42,7 @@
   },
   "config": {
     "commitizen": {
-      "path": "./node_modules/cz-conventional-changelog-emoji"
+      "path": "./node_modules/cz-conventional-changelog"
     }
   },
   "scripts": {
@@ -52,7 +52,8 @@
     "dist:npm": "np --yolo --no-yarn",
     "format": "run-p format:*",
     "format:eslint": "yarn lint:eslint --fix",
-    "format:prettier": "prettier \"**/*.{css,html,js,json,less,md,scss,ts,vue,yaml,yml}\" --write",
+    "format:markdown": "yarn lint:markdown --fix",
+    "format:prettier": "yarn lint:prettier --write",
     "lint": "run-p lint:*",
     "lint:eslint": "eslint \"**/*.{js,mjs,vue}\"",
     "lint:markdown": "markdownlint \"**/*.md\" --ignore \"**/node_modules/**\"",
