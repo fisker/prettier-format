@@ -1,7 +1,7 @@
 {
   "name": "prettier-format",
   "description": "auto load config and run prettier on code",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "dist/index.js",
   "license": "MIT",
   "dependencies": {
