@@ -6,7 +6,7 @@
   "license": "MIT",
   "dependencies": {
     "import-from": "3.0.0",
-    "prettier": "1.19.0"
+    "prettier": "1.19.1"
   },
   "repository": "https://github.com/fisker/prettier-format",
   "home": "https://github.com/fisker/prettier-format#readme",
