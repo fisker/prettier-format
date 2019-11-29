@@ -20,6 +20,7 @@ function resolveConfig(prettier, options, sync) {
 }
 
 function formatter(source, options, sync) {
+  source = String(source)
   options = {
     ...defaultOptions,
     ...options,
