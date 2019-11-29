@@ -39,12 +39,8 @@ test('main', async t => {
 
 test('support buffer', async t => {
   await formatTester(t, {
-    input: Buffer.from(dedent`
-      foo ( )
-    `),
-    expected: dedent`
-      foo();
-    `,
+    input: Buffer.from('foo ( )'),
+    expected: 'foo();',
   })
 })
 
