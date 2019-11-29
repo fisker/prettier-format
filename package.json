@@ -1,17 +1,49 @@
 {
   "name": "prettier-format",
-  "description": "auto load config and run prettier on code",
   "version": "1.0.1",
-  "main": "dist/index.js",
+  "description": "auto load config and run prettier on code",
+  "bugs": {
+    "url": "https://github.com/fisker/prettier-format/issues"
+  },
+  "repository": "https://github.com/fisker/prettier-format",
   "license": "MIT",
+  "author": {
+    "name": "fisker Cheung",
+    "email": "lionkay@gmail.com",
+    "url": "https://www.fiskercheung.com/"
+  },
+  "files": [
+    "lib"
+  ],
+  "sideEffects": false,
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "rollup --config",
+    "clean": "run-p clean:*",
+    "clean:dist": "del-cli dist",
+    "dist": "run-p dist:*",
+    "dist:npm": "np --yolo --no-yarn",
+    "format": "run-p format:*",
+    "format:eslint": "yarn lint:eslint --fix",
+    "format:markdown": "yarn lint:markdown --fix",
+    "format:prettier": "yarn lint:prettier --write",
+    "format:sort-package-json": "sort-package-json \"package.json\" \"packages/*/package.json\"",
+    "lint": "run-p lint:*",
+    "lint:eslint": "eslint \"**/*.{js,mjs,vue}\"",
+    "lint:markdown": "markdownlint \"**/*.md\" --ignore \"**/node_modules/**\"",
+    "lint:prettier": "prettier \"**/*.{css,html,js,json,less,md,scss,ts,vue,yaml,yml}\" --check",
+    "release": "run-s clean lint build test format dist",
+    "test": "ava",
+    "test-coverage": "nyc ava"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
   "dependencies": {
     "import-from": "3.0.0",
     "prettier": "1.19.1"
-  },
-  "repository": "https://github.com/fisker/prettier-format",
-  "home": "https://github.com/fisker/prettier-format#readme",
-  "bugs": {
-    "url": "https://github.com/fisker/prettier-format/issues"
   },
   "devDependencies": {
     "@babel/preset-env": "7.7.4",
@@ -25,6 +57,7 @@
     "babel-plugin-transform-async-to-promises": "0.8.15",
     "cz-conventional-changelog": "3.0.2",
     "dedent": "0.7.0",
+    "del-cli": "3.0.0",
     "eslint": "6.7.1",
     "esm": "3.2.25",
     "husky": "3.1.0",
@@ -32,46 +65,19 @@
     "markdownlint-cli": "0.19.0",
     "npm-run-all": "4.1.5",
     "nyc": "14.1.1",
-    "rimraf": "3.0.0",
     "rollup": "1.27.5",
-    "rollup-plugin-babel": "4.3.3"
-  },
-  "config": {
-    "commitizen": {
-      "path": "./node_modules/cz-conventional-changelog"
-    }
-  },
-  "scripts": {
-    "build": "rollup --config",
-    "clean": "rimraf dist",
-    "dist": "run-p dist:*",
-    "dist:npm": "np --yolo --no-yarn",
-    "format": "run-p format:*",
-    "format:eslint": "yarn lint:eslint --fix",
-    "format:markdown": "yarn lint:markdown --fix",
-    "format:prettier": "yarn lint:prettier --write",
-    "lint": "run-p lint:*",
-    "lint:eslint": "eslint \"**/*.{js,mjs,vue}\"",
-    "lint:markdown": "markdownlint \"**/*.md\" --ignore \"**/node_modules/**\"",
-    "lint:prettier": "prettier \"**/*.{css,html,js,json,less,md,scss,ts,vue,yaml,yml}\" --check",
-    "release": "run-s clean lint build test format dist",
-    "test": "ava",
-    "test-coverage": "nyc ava"
-  },
-  "author": {
-    "name": "fisker Cheung",
-    "email": "lionkay@gmail.com",
-    "url": "https://www.fiskercheung.com/"
+    "rollup-plugin-babel": "4.3.3",
+    "sort-package-json": "1.24.0"
   },
   "publishConfig": {
-    "registry": "https://registry.npmjs.org/",
-    "access": "public"
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
   },
-  "sideEffects": false,
   "ava": {
     "verbose": true,
     "require": "esm"
   },
+  "home": "https://github.com/fisker/prettier-format#readme",
   "nyc": {
     "require": "esm",
     "reporter": [
@@ -81,8 +87,5 @@
     "include": [
       "src/**"
     ]
-  },
-  "files": [
-    "lib"
-  ]
+  }
 }
