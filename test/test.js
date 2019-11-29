@@ -37,6 +37,17 @@ test('main', async t => {
   })
 })
 
+test('support buffer', async t => {
+  await formatTester(t, {
+    input: Buffer.from(dedent`
+      foo ( )
+    `),
+    expected: dedent`
+      foo();
+    `,
+  })
+})
+
 test('options.filePath', async t => {
   await formatTester(t, {
     input: dedent`
