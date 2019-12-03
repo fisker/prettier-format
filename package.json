@@ -42,6 +42,20 @@
       "path": "./node_modules/cz-conventional-changelog"
     }
   },
+  "ava": {
+    "require": "esm",
+    "verbose": true
+  },
+  "nyc": {
+    "include": [
+      "src/**"
+    ],
+    "reporter": [
+      "lcov",
+      "text"
+    ],
+    "require": "esm"
+  },
   "dependencies": {
     "import-from": "3.0.0",
     "prettier": "1.19.1"
@@ -74,19 +88,5 @@
     "access": "public",
     "registry": "https://registry.npmjs.org/"
   },
-  "ava": {
-    "verbose": true,
-    "require": "esm"
-  },
-  "home": "https://github.com/fisker/prettier-format#readme",
-  "nyc": {
-    "require": "esm",
-    "reporter": [
-      "lcov",
-      "text"
-    ],
-    "include": [
-      "src/**"
-    ]
-  }
+  "home": "https://github.com/fisker/prettier-format#readme"
 }
