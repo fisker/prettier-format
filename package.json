@@ -2,10 +2,12 @@
   "name": "prettier-format",
   "version": "1.1.2",
   "description": "auto load config and run prettier on code",
+  "homepage": "https://github.com/fisker/prettier-format#readme",
   "bugs": {
     "url": "https://github.com/fisker/prettier-format/issues"
   },
-  "repository": "https://github.com/fisker/prettier-format",
+  "repository": "fisker/prettier-format",
+  "funding": "https://github.com/fisker/prettier-format?sponsor=1",
   "license": "MIT",
   "author": {
     "name": "fisker Cheung",
@@ -87,6 +89,5 @@
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org/"
-  },
-  "home": "https://github.com/fisker/prettier-format#readme"
+  }
 }
