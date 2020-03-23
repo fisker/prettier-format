@@ -40,7 +40,7 @@ function formatter(source, options, sync) {
     })
   }
 
-  return Promise.resolve(config).then(config =>
+  return Promise.resolve(config).then((config) =>
     formatWithOptions(source, prettier, {
       ...config,
       ...options,
