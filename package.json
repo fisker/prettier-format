@@ -59,7 +59,7 @@
   },
   "dependencies": {
     "import-from": "3.0.0",
-    "prettier": "2.1.2"
+    "prettier": "2.2.1"
   },
   "devDependencies": {
     "@ava/babel": "1.0.1",
