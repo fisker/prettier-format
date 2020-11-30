@@ -1,5 +1,5 @@
 import path from 'path'
-import importPrettier from './import-prettier'
+import importPrettier from './import-prettier.mjs'
 
 const defaultOptions = {}
 

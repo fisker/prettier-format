@@ -1,7 +1,7 @@
 import path from 'path'
 import test from 'ava'
 import dedent from 'dedent'
-import format from '../src'
+import format from '../src/index.mjs'
 
 async function formatTester(t, {input, expected, options}) {
   expected += '\n'
@@ -55,7 +55,7 @@ test('options.filePath', async (t) => {
       var foo = 'bar'
     `,
     options: {
-      filePath: path.join(__dirname, '../foo.js'),
+      filePath: path.join(process.cwd(), 'foo.js'),
     },
   })
 })

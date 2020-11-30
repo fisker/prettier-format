@@ -1,4 +1,5 @@
 import importFrom from 'import-from'
+import importCommonJs from 'import-commonjs'
 
 function importPrettier(directories = []) {
   directories = [...directories, process.cwd()]
@@ -11,7 +12,7 @@ function importPrettier(directories = []) {
     }
   }
 
-  return require('prettier')
+  return importCommonJs('prettier')
 }
 
 export default importPrettier
