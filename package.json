@@ -1,6 +1,6 @@
 {
   "name": "prettier-format",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "auto load config and run prettier on code",
   "homepage": "https://github.com/fisker/prettier-format#readme",
   "bugs": {
