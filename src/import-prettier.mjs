@@ -1,7 +1,4 @@
 import importFrom from 'import-from'
-import importCommonJs from 'import-commonjs'
-
-const require = importCommonJs(import.meta.url)
 
 function importPrettier(directories = []) {
   directories = [...directories, process.cwd()]
@@ -14,6 +11,7 @@ function importPrettier(directories = []) {
     }
   }
 
+  // eslint-disable-next-line no-undef
   return require('prettier')
 }
 
