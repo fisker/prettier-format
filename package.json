@@ -16,7 +16,7 @@
   },
   "sideEffects": false,
   "type": "module",
-  "exports": "index.js",
+  "exports": "./index.js",
   "files": [
     "index.js",
     "lib"
