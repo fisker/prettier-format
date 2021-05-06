@@ -1,7 +1,7 @@
-import path from 'path'
+import path from 'node:path'
 import test from 'ava'
 import dedent from 'dedent'
-import format from '../src/index.mjs'
+import format from '../index.js'
 
 async function formatTester(t, {input, expected, options}) {
   expected += '\n'
