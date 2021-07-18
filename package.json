@@ -56,7 +56,7 @@
     ]
   },
   "dependencies": {
-    "import-from": "3.0.0",
+    "import-from": "4.0.0",
     "prettier": "2.2.1"
   },
   "devDependencies": {
