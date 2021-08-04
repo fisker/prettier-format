@@ -1,4 +1,6 @@
 import path from 'node:path'
+import {Buffer} from 'node:buffer'
+import process from 'node:process'
 import test from 'ava'
 import dedent from 'dedent'
 import format from '../index.js'
