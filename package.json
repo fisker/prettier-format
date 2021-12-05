@@ -57,7 +57,7 @@
   },
   "dependencies": {
     "import-from": "4.0.0",
-    "prettier": "2.5.0"
+    "prettier": "2.5.1"
   },
   "devDependencies": {
     "@commitlint/cli": "15.0.0",
