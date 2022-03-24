@@ -53,7 +53,7 @@ I want it simple
 yarn add prettier-format
 ```
 
-## Ustage
+## Usage
 
 ```js
 import format from 'prettier-format'
