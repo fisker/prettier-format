@@ -39,12 +39,8 @@
     "lint:prettier": "prettier \"**/*.{css,html,js,cjs,mjs,json,less,md,scss,ts,vue,yaml,yml}\" --check",
     "release": "run-s clean lint build test format dist",
     "test": "ava",
-    "test-coverage": "nyc ava"
-  },
-  "config": {
-    "commitizen": {
-      "path": "./node_modules/cz-conventional-changelog"
-    }
+    "test-coverage": "nyc ava",
+    "prepare": "husky install"
   },
   "ava": {
     "verbose": true
@@ -61,13 +57,11 @@
   },
   "devDependencies": {
     "@commitlint/cli": "16.2.3",
-    "@fisker/commitlint-config": "2.0.4",
     "@fisker/eslint-config": "10.1.1",
     "@fisker/husky-config": "4.1.2",
     "@fisker/lint-staged-config": "3.1.4",
     "@fisker/prettier-config": "5.0.5",
     "ava": "4.1.0",
-    "cz-conventional-changelog": "3.3.0",
     "dedent": "0.7.0",
     "del-cli": "4.0.1",
     "eslint": "8.11.0",
