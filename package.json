@@ -52,8 +52,8 @@
     ]
   },
   "dependencies": {
-    "import-from": "4.0.0",
-    "prettier": "2.7.1"
+    "import-meta-resolve": "2.1.0",
+    "prettier": "3.0.0-alpha.0"
   },
   "devDependencies": {
     "@commitlint/cli": "17.0.3",

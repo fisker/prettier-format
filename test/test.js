@@ -7,13 +7,9 @@ import format from '../index.js'
 
 async function formatTester(t, {input, expected, options}) {
   expected += '\n'
-  // async
   const actual = format(input, options)
-  const actualSync = format.sync(input, options)
   t.truthy(actual.then)
-  t.falsy(actualSync.then)
   t.is(await actual, expected)
-  t.is(actualSync, expected)
 }
 
 test('main', async (t) => {
@@ -31,7 +27,7 @@ test('main', async (t) => {
     expected: dedent`
       var bar = function fooBarFooBarFooBarFooBarFooBarFooBarFooBarFooBarFooBar(
         fooBarFooBarFooBarFooBarFooBarFooBarFooBarFooBarFooBarFooBarFooBarFooBar,
-        anotherParam
+        anotherParam,
       ) {
         var foo = "bar"; // comment
       };
@@ -58,24 +54,6 @@ test('options.filePath', async (t) => {
     `,
     options: {
       filePath: path.join(process.cwd(), 'foo.js'),
-    },
-  })
-})
-
-test('options.parser[prettier.format options]', async (t) => {
-  await formatTester(t, {
-    input: dedent`
-      lodash ( )
-    `,
-    expected: dedent`
-      _();
-    `,
-    options: {
-      parser(text, {babel}) {
-        const ast = babel(text)
-        ast.program.body[0].expression.callee.name = '_'
-        return ast
-      },
     },
   })
 })

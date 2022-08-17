@@ -21,30 +21,19 @@
 To load config and format code with prettier, you have to do
 
 ```js
-;(async () => {
-  const config = await prettier.resolveConfig('path/to/file', {
-    useCache: false,
-  })
-  // there is also a sync version of `prettier.resolveConfig`
-  // called `prettier.resolveConfig.sync`
+const config = await prettier.resolveConfig('path/to/file', {useCache: false})
 
-  const formatted = prettier.format(source, {
-    ...config,
-    semi: false,
-  })
-})()
+const formatted = await prettier.format(source, {...config, semi: false})
 ```
 
 I want it simple
 
 ```js
-;(async () => {
-  const formatted = format(source, {
-    filePath: 'path/to/file',
-    useCache: false,
-    semi: false,
-  })
-})()
+const formatted = await format(source, {
+  filePath: 'path/to/file',
+  useCache: false,
+  semi: false,
+})
 ```
 
 ## Install
@@ -58,7 +47,7 @@ yarn add prettier-format
 ```js
 import format from 'prettier-format'
 
-format.sync(`hello (  'world' )`)
+await format(`hello (  'world' )`)
 // => hello("world");\n
 ```
 
@@ -87,10 +76,6 @@ any value [`prettier.format`](https://prettier.io/docs/en/api.html#prettierforma
 Type: `string`
 
 The filePath of source code, if filePath is not empty, config will load automaticly.
-
-### format.sync(source, options?)
-
-Sync version.
 
 ## Related
 
