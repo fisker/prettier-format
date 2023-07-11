@@ -2,7 +2,7 @@ import path from 'node:path'
 import {Buffer} from 'node:buffer'
 import process from 'node:process'
 import test from 'ava'
-import dedent from 'dedent'
+import {outdent} from 'outdent'
 import format from '../index.js'
 
 async function formatTester(t, {input, expected, options}) {
@@ -14,7 +14,7 @@ async function formatTester(t, {input, expected, options}) {
 
 test('main', async (t) => {
   await formatTester(t, {
-    input: dedent`
+    input: outdent`
       var bar = function fooBarFooBarFooBarFooBarFooBarFooBarFooBarFooBarFooBar
       (fooBarFooBarFooBarFooBarFooBarFooBarFooBarFooBarFooBarFooBarFooBarFooBar
       , anotherParam)
@@ -24,7 +24,7 @@ test('main', async (t) => {
                 'bar'; // comment
       }
     `,
-    expected: dedent`
+    expected: outdent`
       var bar = function fooBarFooBarFooBarFooBarFooBarFooBarFooBarFooBarFooBar(
         fooBarFooBarFooBarFooBarFooBarFooBarFooBarFooBarFooBarFooBarFooBarFooBar,
         anotherParam,
@@ -44,11 +44,11 @@ test('support buffer', async (t) => {
 
 test('options.filePath', async (t) => {
   await formatTester(t, {
-    input: dedent`
+    input: outdent`
       // this should be single quoted and without semi
       var foo = "bar"
     `,
-    expected: dedent`
+    expected: outdent`
       // this should be single quoted and without semi
       var foo = 'bar'
     `,
