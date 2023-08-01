@@ -72,6 +72,9 @@
     "outdent": "0.8.0",
     "sort-package-json": "2.5.1"
   },
+  "engines": {
+    "node": ">=16"
+  },
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org/"
