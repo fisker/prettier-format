@@ -73,7 +73,7 @@
     "sort-package-json": "2.5.1"
   },
   "engines": {
-    "node": ">=16"
+    "node": ">=v16.20.1"
   },
   "publishConfig": {
     "access": "public",
