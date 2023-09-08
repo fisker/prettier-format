@@ -30,7 +30,7 @@ I want it simple
 
 ```js
 const formatted = await format(source, {
-  filePath: 'path/to/file',
+  filepath: 'path/to/file',
   useCache: false,
   semi: false,
 })
@@ -71,11 +71,11 @@ any value [`prettier.resolveConfig`](https://prettier.io/docs/en/api.html#pretti
 
 any value [`prettier.format`](https://prettier.io/docs/en/api.html#prettierformatsource-options) takes
 
-#### options.filePath
+#### options.filepath
 
 Type: `string`
 
-The filePath of source code, if filePath is not empty, config will load automaticly.
+The filepath of source code, if filepath is not empty, config will load automaticly.
 
 ## Related
 
